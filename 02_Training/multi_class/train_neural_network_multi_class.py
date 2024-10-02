@@ -14,6 +14,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 data = pd.read_csv('train_occu_data.txt', delim_whitespace=True, header=None)
 
 # Split the data into input features and target variable
+# X is the atom occupancy of nearest neighbors
+# Y is the ordering information:  0 = disorder; > 0 = the variant of ordered structure
 X = data.iloc[:, 1:].values - 1
 y = data.iloc[:, 0].values
 
