@@ -32,7 +32,9 @@ indices = np.arange(data_train.shape[0])
 np.random.shuffle(indices)
 
 # Split the data into input features and target variable
-X_train = data_train[indices, 1:ZT+1] - 1
+# X is the atom occupancy of nearest neighbors
+# Y is the ordering information:  0 = disorder; > 0 = the variant of ordered structure
+X_train = data_train[indices, 1:ZT+1] - 1 
 X_test = data_test[:, 1:ZT+1] - 1
 y_train = data_train[indices, 0]
 y_test = data_test[:, 0]
